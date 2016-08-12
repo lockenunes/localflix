@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 
 
@@ -42,7 +42,7 @@ class Categoria(models.Model):
 
 class Filme(models.Model):
     titulo = models.CharField(max_length=200, verbose_name=u'Título')
-    ano_producao = models.PositiveIntegerField(verbose_name=u'Data de Produção')
+    ano_producao = models.PositiveIntegerField(verbose_name=u'Data de Produção', validators=[MinValueValidator(1980), MaxValueValidator(2016)])
     categorias = models.ManyToManyField(Categoria, verbose_name=u'Categorias')
     atores = models.ManyToManyField(Ator, verbose_name=u'Atores')
     diretor = models.ForeignKey(Diretor, verbose_name=u'Diretor')
