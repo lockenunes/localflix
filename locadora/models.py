@@ -8,7 +8,7 @@ class ProfissionalDoCinema(models.Model):
         abstract = True
 
     nome = models.CharField(max_length=200, verbose_name=u'Nome', null=False, blank=False)
-    email = models.EmailField(max_length=200, verbose_name=u'E-mail', null=False, blank=False)
+    email = models.EmailField(max_length=200, verbose_name=u'E-mail', null=True, blank=True)
 
     def __str__(self):
         return self.nome
@@ -19,6 +19,7 @@ class Diretor(ProfissionalDoCinema):
         verbose_name_plural = u'Diretores'
 
     especialidade = models.CharField(max_length=200, verbose_name=u'Especialidade', null=False, blank=False)
+    numero_de_oscar = models.IntegerField(verbose_name=u'Quantidade de Oscar', default=0, null=False, blank=False)
 
 
 class Ator(ProfissionalDoCinema):
@@ -42,10 +43,11 @@ class Categoria(models.Model):
 
 class Filme(models.Model):
     titulo = models.CharField(max_length=200, verbose_name=u'Título')
-    ano_producao = models.PositiveIntegerField(verbose_name=u'Data de Produção', validators=[MinValueValidator(1980), MaxValueValidator(2016)])
-    categorias = models.ManyToManyField(Categoria, verbose_name=u'Categorias')
+    ano_producao = models.PositiveIntegerField(verbose_name=u'Ano de Produção', validators=[MinValueValidator(1980), MaxValueValidator(2016)])
+    categoria = models.ForeignKey(Categoria, verbose_name=u'Categoria')
     atores = models.ManyToManyField(Ator, verbose_name=u'Atores')
     diretor = models.ForeignKey(Diretor, verbose_name=u'Diretor')
+    numero_de_oscar = models.IntegerField(verbose_name=u'Quantidade de Oscar', default=0, null=False, blank=False)
 
     def __str__(self):
         return self.titulo
