@@ -29,3 +29,9 @@ admin.site.register(Diretor, DiretorAdmin)
 admin.site.register(Ator, AtorAdmin)
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Filme, FilmeAdmin)
+admin.site.register(DVD)
+admin.site.register(BluRay)
+admin.site.register(Cliente)
+admin.site.register(Fabricante)
+
+
