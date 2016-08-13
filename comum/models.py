@@ -1,9 +1,13 @@
 from django.db import models
-from midia.models import Filme
 
-class Fabricante(models.Model):
-    nome_fantasia = models.CharField(max_length=200)
-    cnpj = models.CharField(max_length=50, verbose_name=u'CNPJ', null=True, blank=True)
+
+class Pessoa(models.Model):
+    class Meta:
+        abstract = True
+
+    nome = models.CharField(max_length=200, verbose_name=u'Nome', null=False, blank=False)
+    email = models.EmailField(max_length=200, verbose_name=u'E-mail', null=True, blank=True)
+    data_nascimento = models.DateField(verbose_name=u'Data de Nascimento', null=True, blank=True)
 
     # Endereço
     endereco_logradouro_tipo = models.CharField(max_length=50, null=True, blank=True, verbose_name=u"Tipo de Logradouro")
@@ -15,25 +19,5 @@ class Fabricante(models.Model):
     endereco_cidade = models.CharField(max_length=100, null=True, blank=True, verbose_name=u'Cidade')
     endereco_estado = models.CharField(max_length=100, null=True, blank=True, verbose_name=u'Estado')
 
-
-class CopiaFisica(models.Model):
-    class Meta:
-        abstract = True
-
-    filme = models.ForeignKey(Filme)
-    fabricante = models.ForeignKey(Fabricante)
-    lote = models.PositiveIntegerField()
-    unidades = models.PositiveIntegerField(verbose_name=u'Quantidade de unidades', default=0)
-    em_estoque = models.PositiveIntegerField(verbose_name=u'Em estoque', default=0)
-    duplo = models.BooleanField(default=False)
-    dual_layer = models.BooleanField(default=False)
-
-
-class DVD(CopiaFisica):
-    regiao = models.PositiveIntegerField(default=4) # Região 4 = Brasil
-
-
-class BluRay(CopiaFisica):
-    pass
-
-
+    def __str__(self):
+        return self.nome

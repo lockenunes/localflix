@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'comum.apps.ComumConfig',
+    'midia.apps.MidiaConfig',
+    'estoque.apps.EstoqueConfig',
     'locadora.apps.LocadoraConfig',
     'django.contrib.admin',
     'django.contrib.auth',
