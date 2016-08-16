@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'midia.apps.MidiaConfig',
     'estoque.apps.EstoqueConfig',
     'locadora.apps.LocadoraConfig',
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
