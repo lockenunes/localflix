@@ -1,4 +1,6 @@
 from django.contrib import admin
+
+from midia.forms import FilmeForm
 from .models import Diretor, Categoria, Ator, Filme
 
 
@@ -22,6 +24,7 @@ class FilmeAdmin(admin.ModelAdmin):
     list_display = ['titulo', 'ano_producao', 'numero_de_oscar', ]
     search_fields = ['titulo', ]
     list_filter = ['diretor', 'atores', 'categoria', 'ano_producao', 'numero_de_oscar', ]
+    form = FilmeForm
 
 
 admin.site.register(Diretor, DiretorAdmin)

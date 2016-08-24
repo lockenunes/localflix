@@ -5,6 +5,7 @@ from comum.models import Pessoa
 class Dependente(Pessoa):
     pass
 
+
 class Cliente(Pessoa):
     vip = models.BooleanField(verbose_name=u'VIP?', default=0)
     pontos_fidelidade = models.PositiveIntegerField(verbose_name=u'Pontos de Fidelidade', default=0)

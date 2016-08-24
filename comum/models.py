@@ -10,14 +10,14 @@ class Pessoa(models.Model):
     data_nascimento = models.DateField(verbose_name=u'Data de Nascimento', null=True, blank=True)
 
     # Endereço
-    endereco_logradouro_tipo = models.CharField(max_length=50, null=True, blank=True, verbose_name=u"Tipo de Logradouro")
-    endereco_logradouro = models.CharField(max_length=200, null=True, blank=True, verbose_name=u'Logradouro')
-    endereco_bairro = models.CharField(max_length=200, null=True, blank=True, verbose_name=u'Bairro')
-    endereco_numero = models.CharField(max_length=5, default=u'S/N', null=True, blank=True, verbose_name=u'Número')
-    endereco_complemento = models.CharField(max_length=100, null=True, blank=True, verbose_name=u'Complemento')
-    endereco_referencia = models.CharField(max_length=100, null=True, blank=True, verbose_name=u'Referência')
-    endereco_cidade = models.CharField(max_length=100, null=True, blank=True, verbose_name=u'Cidade')
-    endereco_estado = models.CharField(max_length=100, null=True, blank=True, verbose_name=u'Estado')
+    end_tipo_logradouro = models.CharField(max_length=50, null=True, blank=True, verbose_name=u"Tipo de Logradouro")
+    end_logradouro = models.CharField(max_length=200, null=True, blank=True, verbose_name=u'Logradouro')
+    end_bairro = models.CharField(max_length=200, null=True, blank=True, verbose_name=u'Bairro')
+    end_numero = models.CharField(max_length=5, default=u'S/N', null=True, blank=True, verbose_name=u'Número')
+    end_complemento = models.CharField(max_length=100, null=True, blank=True, verbose_name=u'Complemento')
+    end_referencia = models.CharField(max_length=100, null=True, blank=True, verbose_name=u'Referência')
+    end_cidade = models.CharField(max_length=100, null=True, blank=True, verbose_name=u'Cidade')
+    end_estado = models.CharField(max_length=100, null=True, blank=True, verbose_name=u'Estado')
 
     def __str__(self):
         return self.nome

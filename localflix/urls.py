@@ -1,6 +1,10 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
+from localflix import views
+
 urlpatterns = [
-    url(r'^locadora/', admin.site.urls),
+    url(r'^comum/', include('comum.urls')),
+    url(r'^$', views.index),
+    url(r'^admin/', admin.site.urls),
 ]
