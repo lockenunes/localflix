@@ -34,6 +34,7 @@ class Categoria(models.Model):
 class Filme(models.Model):
     titulo = models.CharField(max_length=200, verbose_name=u'Título')
     ano_producao = models.PositiveIntegerField(verbose_name=u'Ano de Produção', validators=[MinValueValidator(1980), MaxValueValidator(2016)])
+    sinopse = models.TextField(verbose_name=u'Sinopse', default=u'Sinopse texto...')
     categoria = models.ForeignKey(Categoria, verbose_name=u'Categoria')
     atores = models.ManyToManyField(Ator, verbose_name=u'Atores')
     diretor = models.ForeignKey(Diretor, verbose_name=u'Diretor')
