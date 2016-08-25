@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="panel panel-default">
+<!-- Default panel contents -->
+    <div class="panel-heading">{{ filme.titulo }}</div>
+        <div class="panel-body">
+        <p>{{ filme.sinopse }}</p>
+    </div>
+
+    <!-- Table -->
+    <table class="table">
+        <tr>
+            <th>Ano Produção</th>
+            <th>Categoria</th>
+            <th>Diretor</th>
+            <th>Atores</th>
+        <tr>
+        <tr>
+            <td>{{ filme.ano_producao }}</td>
+            <td>{{ filme.categoria }}</td>
+            <td>{{ filme.diretor }}</td>
+            <td>
+                {% for ator in filme.atores.all %}
+                    {{ ator }} <br />
+                {% endfor %}
+            </td>
+
+        </tr>
+    </table>
+
+
+</div>
+</div>
+{% endblock %}

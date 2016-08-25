@@ -9,6 +9,7 @@
       <tr>
         <th>#</th>
         <th>Título</th>
+        <th>Ação</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
     <tr>
         <td>{{ filme.id }}</td>
         <td>{{ filme.titulo }}</td>
+        <td><a href="/midia/filme/{{ filme.id }}/" class="btn btn-info" role="button"><span class="glyphicon glyphicon-star-empty"></span> DETALHES</a></td>
     </tr>
     {% endfor %}
     </tbody>

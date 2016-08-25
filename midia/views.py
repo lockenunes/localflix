@@ -8,7 +8,7 @@ from midia.models import Filme, Diretor, Ator
 def filme_detail(request, id):
     filme = get_object_or_404(Filme, pk=id)
     context = {'filme': filme}
-    return render(request, 'midia_detail.html', context)
+    return render(request, 'filme_detail.html', context)
 
 def index(request):
     return render(request, 'home.html', {})
