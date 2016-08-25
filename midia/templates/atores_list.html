@@ -12,18 +12,12 @@
       </tr>
     </thead>
     <tbody>
+     {% for ator in atores %}
       <tr>
-        <td>1</td>
-        <td>Anna</td>
+          <td>{{ ator.id }}</td>
+          <td>{{ ator.nome }}</td>
       </tr>
-      <tr>
-        <td>2</td>
-        <td>Debbie</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>John</td>
-      </tr>
+    {% endfor %}
     </tbody>
   </table>
 </div>

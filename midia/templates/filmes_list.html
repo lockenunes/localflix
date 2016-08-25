@@ -12,18 +12,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Titanic</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Matrix</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Joe</td>
-      </tr>
+    {% for filme in filmes %}
+    <tr>
+        <td>{{ filme.id }}</td>
+        <td>{{ filme.titulo }}</td>
+    </tr>
+    {% endfor %}
     </tbody>
   </table>
 </div>
