@@ -123,10 +123,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+
 
 SUIT_CONFIG = {
     'ADMIN_NAME': 'LocalFlix',
     'MENU_OPEN_FIRST_CHILD': False,
     'MENU_EXCLUDE': ('locadora.dependente', ),
 }
+
+STATIC_URL = '/static/'
